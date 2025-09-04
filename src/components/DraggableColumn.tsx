@@ -27,64 +27,66 @@ export const DraggableColumn: React.FC<DraggableColumnProps> = ({
   onCreateTask,
   onReorderColumns,
 }) => {
-  const [isDragging, setIsDragging] = useState(false);
+  // const [isDragging, setIsDragging] = useState(false);
 
-  const handleDragStart = (e: React.DragEvent<HTMLDivElement>) => {
-    setIsDragging(true);
-    e.dataTransfer.setData(
-      "text/plain",
-      JSON.stringify({
-        type: "column",
-        columnId: column.id,
-        sourceIndex: index,
-      })
-    );
-    e.dataTransfer.effectAllowed = "move";
-    console.log("Column drag started:", column.title);
-  };
+  // const handleDragStart = (e: React.DragEvent<HTMLDivElement>) => {
+  //   setIsDragging(true);
+  //   e.dataTransfer.setData(
+  //     "text/plain",
+  //     JSON.stringify({
+  //       type: "column",
+  //       columnId: column.id,
+  //       sourceIndex: index,
+  //     })
+  //   );
+  //   e.dataTransfer.effectAllowed = "move";
+  //   console.log("Column drag started:", column.title);
+  // };
 
-  const handleDragEnd = () => {
-    setIsDragging(false);
-  };
+  // const handleDragEnd = () => {
+  //   setIsDragging(false);
+  // };
 
-  const handleDragOver = (e: React.DragEvent<HTMLDivElement>) => {
-    e.preventDefault();
-    e.dataTransfer.dropEffect = "move";
-  };
+  // const handleDragOver = (e: React.DragEvent<HTMLDivElement>) => {
+  //   e.preventDefault();
+  //   e.dataTransfer.dropEffect = "move";
+  // };
 
-  const handleDrop = (e: React.DragEvent<HTMLDivElement>) => {
-    e.preventDefault();
-    const dragData = e.dataTransfer.getData("text/plain");
+  // const handleDrop = (e: React.DragEvent<HTMLDivElement>) => {
+  //   e.preventDefault();
+  //   const dragData = e.dataTransfer.getData("text/plain");
 
-    if (dragData) {
-      try {
-        const parsed = JSON.parse(dragData);
+  //   if (dragData) {
+  //     try {
+  //       const parsed = JSON.parse(dragData);
 
-        if (parsed.type === "column" && parsed.sourceIndex !== index) {
-          console.log(
-            `Reordering column from ${parsed.sourceIndex} to ${index}`
-          );
-          onReorderColumns(parsed.sourceIndex, index);
-        }
-      } catch (error) {
-        console.error("Error parsing drag data:", error);
-      }
-    }
-  };
+  //       if (parsed.type === "column" && parsed.sourceIndex !== index) {
+  //         console.log(
+  //           `Reordering column from ${parsed.sourceIndex} to ${index}`
+  //         );
+  //         onReorderColumns(parsed.sourceIndex, index);
+  //       }
+  //     } catch (error) {
+  //       console.error("Error parsing drag data:", error);
+  //     }
+  //   }
+  // };
 
   return (
     <div
-      style={{
-        opacity: isDragging ? 0.5 : 1,
-        transform: isDragging ? "rotate(2deg)" : "rotate(0deg)",
-        transition: "all 0.2s ease",
-        cursor: "move",
-      }}
-      draggable
-      onDragStart={handleDragStart}
-      onDragEnd={handleDragEnd}
-      onDragOver={handleDragOver}
-      onDrop={handleDrop}
+      style={
+        {
+          //   opacity: isDragging ? 0.5 : 1,
+          //   transform: isDragging ? "rotate(2deg)" : "rotate(0deg)",
+          // transition: "all 0.2s ease",
+          // cursor: "move",
+        }
+      }
+      // draggable
+      // onDragStart={handleDragStart}
+      // onDragEnd={handleDragEnd}
+      // onDragOver={handleDragOver}
+      // onDrop={handleDrop}
     >
       <div
         style={{
@@ -93,7 +95,7 @@ export const DraggableColumn: React.FC<DraggableColumnProps> = ({
         }}
       >
         {/* Indicador visual para drag */}
-        <div
+        {/* <div
           style={{
             position: "absolute",
             top: "8px",
@@ -107,7 +109,7 @@ export const DraggableColumn: React.FC<DraggableColumnProps> = ({
           }}
         >
           ⋮⋮
-        </div>
+        </div> */}
 
         <KanbanColumn
           column={column}

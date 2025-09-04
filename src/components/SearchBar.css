@@ -28,6 +28,7 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  line-height: normal
 }
 
 .search-bar-actions {
@@ -44,21 +45,11 @@
   max-width: 400px;
 }
 
-.search-input-label {
-  position: absolute;
-  left: 12px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #6b7280;
-  font-size: 0.875rem;
-  font-weight: 500;
-  pointer-events: none;
-  z-index: 1;
-}
+
 
 .search-input {
   width: 100%;
-  padding: 12px 16px 12px 60px;
+  padding: 12px 16px 12px 12px;
   border: 2px solid #e5e7eb;
   border-radius: 8px;
   font-size: 1rem;
@@ -116,31 +107,31 @@
     padding: 1.5rem;
     margin-bottom: 1.5rem;
   }
-  
+
   .search-bar-container {
     flex-direction: column;
     align-items: stretch;
     gap: 1.5rem;
   }
-  
+
   .search-bar-header {
     text-align: center;
     min-width: auto;
   }
-  
+
   .search-bar-title {
     font-size: 2rem;
   }
-  
+
   .search-bar-actions {
     flex-direction: column;
     min-width: auto;
   }
-  
+
   .search-input-container {
     max-width: none;
   }
-  
+
   .create-task-button {
     justify-content: center;
   }
@@ -150,15 +141,15 @@
   .search-bar {
     padding: 1rem;
   }
-  
+
   .search-bar-title {
     font-size: 1.75rem;
   }
-  
+
   .search-input {
     padding-left: 50px;
   }
-  
+
   .search-input-label {
     left: 10px;
     font-size: 0.8rem;
@@ -171,7 +162,7 @@
   .create-task-button {
     transition: none;
   }
-  
+
   .create-task-button:hover {
     transform: none;
   }
@@ -182,17 +173,17 @@
   .search-bar {
     border: 2px solid #000;
   }
-  
+
   .search-input {
     border-color: #000;
     background: white;
   }
-  
+
   .search-input:focus {
     border-color: #0066cc;
     box-shadow: 0 0 0 2px #0066cc;
   }
-  
+
   .create-task-button {
     background: #0066cc;
     border: 2px solid #000;

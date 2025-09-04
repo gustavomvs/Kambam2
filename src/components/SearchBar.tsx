@@ -1,5 +1,6 @@
 import React from "react";
 import "./SearchBar.css";
+import { SearchIcon } from "@twilio-paste/icons/esm/SearchIcon";
 
 interface SearchBarProps {
   searchQuery: string;
@@ -20,29 +21,15 @@ export const SearchBar: React.FC<SearchBarProps> = ({
         </div>
 
         <div className="search-bar-actions">
-          <div className="search-input-container">
-            <label className="search-input-label" htmlFor="search-input">
-              Search
-            </label>
-            <input
-              id="search-input"
-              type="text"
-              className="search-input"
-              placeholder="Buscar tarefas..."
-              value={searchQuery}
-              onChange={(e) => onSearchChange(e.target.value)}
-              aria-label="Buscar tarefas"
-            />
-          </div>
-
-          <button 
-            className="create-task-button"
-            onClick={onCreateTask}
-            aria-label="Criar nova tarefa"
-          >
-            <span className="create-task-icon">+</span>
-            <span>Nova Tarefa</span>
-          </button>
+          <input
+            id="search-input"
+            type="text"
+            className="search-input"
+            placeholder="Buscar tarefas..."
+            value={searchQuery}
+            onChange={(e) => onSearchChange(e.target.value)}
+            aria-label="Buscar tarefas"
+          />
         </div>
       </div>
     </div>
